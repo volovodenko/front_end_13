@@ -1,0 +1,32 @@
+.menu-main {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0 10px;
+  height: 40px;
+  width: 50%;
+
+  & .active {
+    color: white;
+  }
+
+
+  li {
+    list-style: none;
+
+    a {
+      color: #999;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: ease-in-out color .2s;
+      outline: 0 !important;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+}

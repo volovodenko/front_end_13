@@ -1,0 +1,48 @@
+.login {
+  width: 30%;
+  margin: 0 auto;
+  background-color: #343a40;
+  padding: 10px;
+  border-radius: 10px;
+  color: #999;
+  box-shadow: 3px 3px 3px gray, -3px 3px 3px gray;
+
+  fieldset {
+    border: 0;
+  }
+
+  legend {
+    text-align: center;
+  }
+
+  input {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  button {
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0;
+    width: 50%;
+    height: 30px;
+    background-color: darkslateblue;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: ease-in-out background-color .2s;
+
+    &:hover {
+      background-color: cornflowerblue;
+    }
+
+    &:active,
+    &:focus {
+      outline: 0 !important;
+    }
+  }
+
+}

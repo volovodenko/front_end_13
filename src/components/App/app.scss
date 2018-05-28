@@ -1,0 +1,23 @@
+html, body, h1, h2, h3, nav {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Apple-system';
+  src: url("../../fonts/Apple/apple.ttf") format('truetype');
+}
+
+
+body {
+  font-family: Apple-system, Arial, sans-serif;
+  font-size: 100%;
+}
+
+#wrapper {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  position: relative;
+  width: 100%;
+}

@@ -1,0 +1,54 @@
+npm repo webpack
+
+npm init
+npm install --save-dev webpack webpack-cli
+
+create -> webpack.config.js
+
+npm install --save-dev babel-loader babel-core babel-preset-env babel-preset-react
+npm i react react-dom
+npm i --save-dev html-webpack-plugin //плагін для інжектування js в index.html
+npm i --save-dev webpack-dev-server //локальний сервер + live reload
+npm install style-loader --save-dev  //Adds CSS to the DOM by injecting a <style> tag
+npm install --save-dev css-loader
+
+npm install --save-dev babel-plugin-transform-runtime //для development
+npm install --save babel-runtime //для production
+
+npm install postcss-loader
+
+npm install eslint-loader --save-dev
+npm install eslint --save-dev
+npm i babel-eslint eslint-plugin-react --save-dev
+
+npm install --save-dev mini-css-extract-plugin //витягувати css з js
+npm i clean-webpack-plugin --save-dev //A webpack plugin to remove/clean your build folder(s) before building
+
+npm i --save-dev autoprefixer
+
+npm install sass-loader node-sass --save-dev //The sass-loader requires node-sass and webpack as peerDependency.
+
+babel-preset-es2015 // This package has been deprecated, we recommend using babel-preset-env now
+
+
+npm install --save redux react-redux
+
+npm install babel-preset-stage-0 --save-dev //ES7
+
+path - это стандартный модуль node.js, его не нужно устанавливать
+https://js-node.ru/site/article?id=30
+https://nodejs.org/api/path.html
+
+
+npm install --save redux-thunk
+
+npm install --save-dev redux-devtools-extension
+
+npm install --save react-router-dom
+
+npm install file-loader --save-dev
+npm install --save reset-css
+
+
+
+

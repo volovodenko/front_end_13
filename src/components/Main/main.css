@@ -1,0 +1,10 @@
+main {
+    box-sizing: border-box;
+    width: 90%;
+    text-align: justify;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+}

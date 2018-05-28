@@ -1,0 +1,39 @@
+.menu-auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0 10px;
+  height: 40px;
+  width: 200px;
+
+  & .active {
+    color: white;
+  }
+
+  li {
+    color: #999;
+    list-style: none;
+    font-size: 0.9rem;
+
+    a {
+      color: #999;
+      text-decoration: none;
+      transition: ease-in-out color .2s;
+      outline: 0 !important;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &__userName {
+    color: #999;
+    b {
+      color: green;
+    }
+
+  }
+}
