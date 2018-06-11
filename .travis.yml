@@ -3,7 +3,7 @@ language: node_js
 node_js: stable
 script: npm run build
 deploy:
-  provider: heroku
+  provider: pages
   skip_cleanup: true
-  app: aqueous-bayou-92532
-  api_key: $HEROKU_TOKEN
+  github_token: $GITHUB_TOKEN
+  local_dir: build
