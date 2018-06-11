@@ -6,5 +6,4 @@ deploy:
   provider: heroku
   skip_cleanup: true
   app: aqueous-bayou-92532
-  github_token: $HEROKU_TOKEN
-  local_dir: build
+  api_key: $HEROKU_TOKEN
