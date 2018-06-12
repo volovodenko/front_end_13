@@ -10,10 +10,11 @@ import configStore from './store/configStore';
 
 
 const store = configStore();
+const publicPath = process.env.REPOSITORY_NAME ? `/${process.env.REPOSITORY_NAME}` : '/';
 
 ReactDom.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename={publicPath}>
             <App />
         </BrowserRouter>
     </Provider>,
