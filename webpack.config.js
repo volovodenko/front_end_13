@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const devMode = process.env.NODE_ENV !== 'production';
-const publicPath = process.env.REPOSITORY_NAME ? `/${process.env.REPOSITORY_NAME}` : '/';
+const publicPath = process.env.REPOSITORY_NAME ? `/${process.env.REPOSITORY_NAME}/` : '/';
 
 module.exports = {
     //https://webpack.js.org/configuration/
