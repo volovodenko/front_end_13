@@ -2,16 +2,18 @@
   "name": "fe13",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "engines": {
+    "node": "10.1.0",
+    "npm": "6.1.0"
+  },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack --progress"
+    "build": "NODE_ENV=production webpack --progress",
+    "build:github": "NODE_ENV=production REPOSITORY_NAME=front_end_13 webpack --progress"
   },
   "author": "Vitaly Volovodenko",
   "license": "ISC",
-  "homepage": "https://volovodenko.github.io/front_end_13",
   "devDependencies": {
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
