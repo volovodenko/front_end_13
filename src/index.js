@@ -11,6 +11,8 @@ import configStore from './store/configStore';
 
 const store = configStore();
 const publicPath = process.env.REPOSITORY_NAME ? '/' + process.env.REPOSITORY_NAME : '/';
+console.log(publicPath);
+
 
 ReactDom.render(
     <Provider store={store}>
