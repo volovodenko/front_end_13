@@ -19,11 +19,11 @@ module.exports = {
 
     // Configure how performance hints are shown. For example if you have an asset that is over 250kb,
     // webpack will emit a warning notifying you of this.
-    // performance: {
-    //     assetFilter: function(assetFilename) { //применяеться фильтр только для файлов js
-    //         return assetFilename.endsWith('.js');
-    //     }
-    // },
+    performance: {
+        assetFilter: function(assetFilename) { //применяеться фильтр только для файлов js
+            return assetFilename.endsWith('.js');
+        }
+    },
 
 
     entry: [ //The point or points to enter the application
