@@ -53,7 +53,6 @@ class Main extends Component {
                     <Route exact path='/login' render={this.login()}/>
                     <Route exact path='/logout' render={this.logout()}/>
                     <Route exact path='/dashboard' render={this.dashboard()}/>
-                    <Route exact path='/front_end_13' render={this.logout()}/>
                     <Route component={NotFound}/>
                 </Switch>
             </main>
