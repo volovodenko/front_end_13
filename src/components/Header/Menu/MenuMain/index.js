@@ -12,7 +12,6 @@ class MenuMain extends  Component {
     }
 
     render () {
-
         return (
             <ul className='menu-main'>
                 <li><NavLink exact to='/' activeClassName='active' className='fa fa-home'/></li>
