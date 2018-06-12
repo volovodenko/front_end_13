@@ -10,8 +10,9 @@ import configStore from './store/configStore';
 
 
 const store = configStore();
-const publicPath = process.env.REPOSITORY_NAME ? '/' + process.env.REPOSITORY_NAME : '/';
-console.log(publicPath);
+const publicPath = '/front_end_13';
+console.log(process.env.REPOSITORY_NAME);
+// console.log(publicPath);
 
 
 ReactDom.render(
