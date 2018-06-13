@@ -33,7 +33,7 @@ export default function register() {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.__PATH__}service-worker.js`;
+      const swUrl = `${process.env.__PATH__}static/js/service-worker.js`;
       console.log(swUrl);
 
       if (isLocalhost) {

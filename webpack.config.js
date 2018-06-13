@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 const publicPath = process.env.REPOSITORY_NAME ? `/${process.env.REPOSITORY_NAME}/` : '/';
 
@@ -33,7 +34,7 @@ module.exports = {
     ],
 
     output: {
-        filename: 'static/js/main.[hash:8].js',
+        filename: 'static/js/[name].[hash:8].js',
         // chunkFilename: 'static/js/[name].chunk.js',
         publicPath: publicPath,
         path: path.resolve(__dirname, 'build'),
@@ -209,6 +210,26 @@ module.exports = {
                 __DEV__: JSON.stringify(devMode),
                 __PATH__: JSON.stringify(publicPath)
             }
+        }),
+
+
+        // Generate a service worker script that will precache, and keep up to date,
+        // the HTML & assets that are part of the Webpack build.
+        new SWPrecacheWebpackPlugin({
+            // By default, a cache-busting query parameter is appended to requests
+            // used to populate the caches, to ensure the responses are fresh.
+            // If a URL is already hashed by Webpack, then there is no concern
+            // about it being stale, and the cache-busting can be skipped.
+            dontCacheBustUrlsMatching: /\.\w{8}\./,
+            filename: 'static/js/service-worker.js',
+            minify: true,
+            // For unknown URLs, fallback to the index page
+            // navigateFallback: publicUrl + '/index.html',
+            // Ignores URLs starting from /__ (useful for Firebase):
+            // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
+            navigateFallbackWhitelist: [/^(?!\/__).*/],
+            // Don't precache sourcemaps (they're large) and build asset manifest:
+            staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
         }),
 
         //A webpack plugin to remove/clean your build folder(s) before building
