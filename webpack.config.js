@@ -203,6 +203,14 @@ module.exports = {
             // chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
         }),
 
+        //The DefinePlugin allows you to create global constants which can be configured at compile time.
+        new webpack.DefinePlugin({
+            "process.env": {
+                __DEV__: JSON.stringify(devMode),
+                __PATH__: JSON.stringify(publicPath)
+            }
+        }),
+
         //A webpack plugin to remove/clean your build folder(s) before building
         new CleanWebpackPlugin(['build'], {dry: devMode, verbose: !devMode})
 

@@ -10,10 +10,7 @@ import configStore from './store/configStore';
 
 
 const store = configStore();
-const publicPath = '/front_end_13';
-console.log(process.env.REPOSITORY_NAME);
-// console.log(publicPath);
-
+const publicPath = process.env.__PATH__;
 
 ReactDom.render(
     <Provider store={store}>
@@ -24,11 +21,12 @@ ReactDom.render(
     document.getElementById('root')
 );
 
-const env = process.env.NODE_ENV;
-const devMode = env === 'development';
+
+const devMode = process.env.__DEV__;
 if (!devMode) {
     registerServiceWorker();
 }
+
 
 
 // import {createStore} from 'redux';
