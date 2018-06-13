@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 const publicPath = process.env.REPOSITORY_NAME ? `/${process.env.REPOSITORY_NAME}/` : '/';
 
@@ -168,7 +169,20 @@ module.exports = {
                         name: devMode ? 'static/images/[name].[ext]' : 'static/images/[name].[hash:8].[ext]',
                     },
                 },
-            }
+            },
+            // {
+            //     test:    /\.html$/,
+            //     include: [
+            //         path.resolve(__dirname, 'public'),
+            //     ],
+            //     use:     {
+            //         loader:  'html-loader',
+            //         options: {
+            //             self: true,
+            //             minimize: true
+            //         },
+            //     },
+            // }
         ]
     },
 
@@ -177,6 +191,7 @@ module.exports = {
         // Generates an `index.html` file with the <script> injected.
         new HtmlWebpackPlugin({
             inject: true,
+            title: 'Hello',
             template: './public/index.html',
             minify: {
                 removeComments: true,
@@ -190,6 +205,26 @@ module.exports = {
                 minifyCSS: true,
                 minifyURLs: true,
             }
+        }),
+
+        new HtmlWebpackPlugin({
+            content: publicPath,
+            inject: false,
+            filename: '404.html',
+            template: './public/404.html',
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true,
+            }
+
         }),
 
         // Add module names to factory functions so they appear in browser profiler.
@@ -231,6 +266,11 @@ module.exports = {
             // Don't precache sourcemaps (they're large) and build asset manifest:
             staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
         }),
+
+        // Copy 404.html for Single Page Apps for GitHub Pages
+        // new CopyWebpackPlugin([{
+        //     from: './public/404.html'
+        // }]),
 
         //A webpack plugin to remove/clean your build folder(s) before building
         new CleanWebpackPlugin(['build'], {dry: devMode, verbose: !devMode})
