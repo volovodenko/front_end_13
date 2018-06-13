@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>React App</title><script>// This script checks to see if a redirect is present in the query string
+        // and converts it back into the correct url and adds it to the
+        // browser's history using window.history.replaceState(...),
+        // which won't cause the browser to attempt to load the new url.
+        // When the single page app is loaded further down in this file,
+        // the correct url will be waiting in the browser's history for
+        // the single page app to route accordingly.
+        (function(){
+            let redirect = sessionStorage.redirect;
+            delete sessionStorage.redirect;
+            if (redirect && redirect != location.href) {
+                history.replaceState(null, null, redirect);
+                // REMOVE THIS - just showing the redirect route in the UI
+                // document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
+            }
+            else {
+                // REMOVE THIS - just showing the redirect route in the UI
+                // document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
+            }
+        })();</script><link href="/front_end_13/static/css/main.78d90982.css" rel="stylesheet"></head><body><div id="root"></div><script type="text/javascript" src="/front_end_13/static/js/main.78d90982.js"></script></body></html>
